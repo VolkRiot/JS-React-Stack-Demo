@@ -7,7 +7,7 @@ class Dog {
     this.name = name
   }
   bark() {
-    return `Bark Bark I am ${this.name}`
+    return `Bark Bark, I am ${this.name}`
   }
 }
 
