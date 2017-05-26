@@ -1,2 +1,6 @@
 [options]
 suppress_comment= \\(.\\|\n\\)*\\flow-disable-next-line
+
+[ignore]
+; Ignore native base
+.*/node_modules/
