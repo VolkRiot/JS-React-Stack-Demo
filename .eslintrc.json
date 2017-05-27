@@ -9,7 +9,8 @@
   ],
   "parser": "babel-eslint",
   "env": {
-  "jest": true
+  "jest": true,
+  "browser": true
   },
   "rules": {
     "semi": [2, "never"],
