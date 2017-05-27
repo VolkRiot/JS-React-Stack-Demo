@@ -11,7 +11,8 @@
     "compression": "^1.6.2",
     "express": "^4.15.3",
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "react-hot-loader": "next"
   },
   "browserslist": [
     "> 1%"
