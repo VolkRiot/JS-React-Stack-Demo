@@ -12,6 +12,9 @@
   "jest": true,
   "browser": true
   },
+  "settings": {
+    "polyfills": ["fetch"]
+  },
   "rules": {
     "semi": [2, "never"],
     "no-unexpected-multiline": 2,
