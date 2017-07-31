@@ -1,10 +1,28 @@
 import React from 'react'
 import Helmet from 'react-helmet'
+import injectSheet from 'react-jss'
 
 import ModalExample from '../modal-example'
 import { APP_NAME } from '../../config'
 
-const HomePage = () =>
+const styles = {
+  hoverMe: {
+    '&:hover': {
+      color: 'red',
+    },
+  },
+  '@media (max-width: 800px)': {
+    resizeMe: {
+      color: 'red',
+    },
+  },
+  specialButton: {
+    composes: ['btn', 'btn-primary'],
+    backgroundColor: 'limegreen',
+  },
+}
+
+const HomePage = ({ classes }) =>
   (<div>
     <Helmet
       meta={[
@@ -14,9 +32,7 @@ const HomePage = () =>
     />
     <div className="jumbotron">
       <div className="container">
-        <h1 className="display-3 mb-4">
-          {APP_NAME}
-        </h1>
+        <h1 className="display-3 mb-4">{APP_NAME}</h1>
       </div>
     </div>
     <div className="container">
@@ -24,18 +40,14 @@ const HomePage = () =>
         <div className="col-md-4 mb-4">
           <h3 className="mb-3">Bootstrap</h3>
           <p>
-            <button
-              type="button"
-              data-toggle="modal"
-              data-target=".js-modal-example"
-              className="btn btn-primary"
-            >
-              Open Modal
-            </button>
+            <button type="button" data-toggle="modal" data-target=".js-modal-example" className="btn btn-primary">Open Modal</button>
           </p>
         </div>
         <div className="col-md-4 mb-4">
-          <h3 className="mb-3">JSS (soon)</h3>
+          <h3 className="mb-3">JSS</h3>
+          <p className={classes.hoverMe}>Hover me.</p>
+          <p className={classes.resizeMe}>Resize the window.</p>
+          <button className={classes.specialButton}>Composition</button>
         </div>
         <div className="col-md-4 mb-4">
           <h3 className="mb-3">Websockets</h3>
@@ -46,4 +58,4 @@ const HomePage = () =>
     <ModalExample />
   </div>)
 
-export default HomePage
+export default injectSheet(styles)(HomePage)
